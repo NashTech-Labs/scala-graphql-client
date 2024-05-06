@@ -1,0 +1,18 @@
+query GetUser($login: String!) {
+    user(login: $login) {
+        login
+        bio
+        email
+        createdAt
+        followers (first: 2){
+            nodes {
+                name
+            }
+        }
+        following(first: 3) {
+            nodes {
+                name
+            }
+        }
+    }
+}

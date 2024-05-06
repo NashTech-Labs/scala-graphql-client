@@ -1,0 +1,1 @@
+addSbtPlugin("de.mukis" % "sbt-graphql" % "0.17.0")

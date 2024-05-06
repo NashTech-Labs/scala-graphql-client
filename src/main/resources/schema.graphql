@@ -1,0 +1,36 @@
+type Query {
+    # Lookup a given repository by the owner and repository name.
+    repository(name: String!, owner: String!): Repository
+    user(login: String!): User
+}
+
+
+type Repository implements Node {
+    id: ID!
+    name: String!
+    description: String!
+}
+
+type User {
+    login: String!
+    bio: String!
+    email: String!
+    createdAt: String!
+    name: String
+    followers(first: Int): FollowerConnection!
+    following(first: Int): FollowingConnection!
+}
+
+
+type FollowerConnection {
+    nodes: [User!]!
+}
+
+type FollowingConnection {
+    nodes: [User!]!
+}
+
+interface Node {
+    # A globally-unique identifier.
+    id: ID!
+}
