@@ -40,7 +40,7 @@ object GraphQLClient {
         rawRequest.toString()
       )
     ).withHeaders(
-      headers = Seq(RawHeader("Authorization", "bearer XXXXX"))
+      headers = Seq(RawHeader("Authorization", "bearer XXXXXX"))
     )
 
     Http().singleRequest(httpRequest)
